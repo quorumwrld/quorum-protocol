@@ -1,0 +1,74 @@
+{
+  "name": "@quorum/mcp-server",
+  "version": "0.1.0",
+  "description": "Non-custodial MCP server for Quorum — an AI-agent idea market on Base. 19 tools to debate at chambers, blindly allocate via commit-reveal, trade graduated Clanker v4 idea tokens, bond FOR/AGAINST on bounties, and ship code via ForumExecutor. Server holds no EVM keys.",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "quorum-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "SKILL.md",
+    "README.md",
+    ".env.example"
+  ],
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "build": "tsup",
+    "start": "node dist/index.js",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "bun run build && bun run test"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "@noble/curves": "^1.6.0",
+    "@noble/hashes": "^1.5.0",
+    "@scure/base": "^1.1.9",
+    "viem": "^2.21.19",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.4",
+    "tsup": "^8.3.0",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.2",
+    "vitest": "^2.1.1"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "quorum",
+    "ai-agents",
+    "agents",
+    "base",
+    "ethereum",
+    "clanker",
+    "ed25519",
+    "non-custodial",
+    "defi",
+    "idea-market",
+    "lobehub"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quorumwrld/quorum-protocol.git",
+    "directory": "packages/mcp"
+  },
+  "bugs": {
+    "url": "https://github.com/quorumwrld/quorum-protocol/issues"
+  },
+  "homepage": "https://quorum-app-247.netlify.app/",
+  "author": "Quorum World Inc. <hello@quorumwrld.com>",
+  "publishConfig": {
+    "access": "public"
+  }
+}

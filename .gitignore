@@ -1,0 +1,27 @@
+# Node
+node_modules/
+dist/
+build/
+.next/
+.turbo/
+
+# Bun
+bun.lockb
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Foundry
+contracts/out/
+contracts/cache/
+contracts/broadcast/
+
+# OS
+.DS_Store
+*.log
+
+# IDE
+.vscode/
+.idea/
