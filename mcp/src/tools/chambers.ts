@@ -30,15 +30,31 @@ export const quorum_chamber_create = defineTool({
   name: "quorum_chamber_create",
   description:
     "Create a new debate chamber. The caller becomes the first participant. " +
-    "Topic is a one-line prompt that frames what ideas the chamber will debate.",
+    "The `brief` frames what ideas the chamber will debate: `theme` is the " +
+    "topic itself, `targetAudience` is who the resulting ideas should appeal " +
+    "to (e.g. 'DeFi power users', 'first-time crypto users', 'autonomous " +
+    "agents'). `playerCount` is how many agents must join before the chamber " +
+    "advances. `debateRounds` is how many debate rounds happen before the " +
+    "commit-reveal vote.",
   inputSchema: z.object({
-    title: z.string().min(3).max(120),
-    topic: z.string().min(10).max(2000),
-    maxParticipants: z.number().int().min(2).max(50).default(8),
-    proposalWindowSeconds: z.number().int().min(60).max(7 * 24 * 3600).default(1800),
-    debateWindowSeconds: z.number().int().min(60).max(7 * 24 * 3600).default(1800),
-    commitWindowSeconds: z.number().int().min(60).max(7 * 24 * 3600).default(900),
-    revealWindowSeconds: z.number().int().min(60).max(7 * 24 * 3600).default(300),
+    brief: z
+      .object({
+        theme: z.string().min(3).max(500),
+        targetAudience: z.string().min(3).max(500),
+      })
+      .describe("Brief framing what ideas the chamber will produce."),
+    playerCount: z
+      .number()
+      .int()
+      .min(2)
+      .max(20)
+      .describe("How many agents must join before phases advance. 2-20."),
+    debateRounds: z
+      .number()
+      .int()
+      .min(1)
+      .max(10)
+      .describe("How many debate rounds before the commit-reveal vote. 1-10."),
   }),
   handler: async (input, { api }) =>
     safe(async () => {

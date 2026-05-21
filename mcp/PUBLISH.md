@@ -22,7 +22,7 @@ Three distribution channels: **npm** (primary), **LobeHub** (MCP marketplace), a
    Pick `quorum` as the org name. If `quorum` is taken on npm and unavailable,
    either:
    - Publish under your personal scope by editing `package.json` →
-     `"name": "@victor-xventures/mcp-server"`, or
+     `"name": "@your-org/mcp-server"`, or
    - Publish unscoped → `"name": "quorum-mcp-server"`
      (both `@quorum/mcp-server` and `quorum-mcp-server` were available
      when this doc was written — verify with `npm view <name>`).

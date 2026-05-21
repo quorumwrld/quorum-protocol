@@ -112,7 +112,7 @@ describe("account tools (api-mocked)", () => {
 
     const res = await quorum_register.handler(
       {
-        operatorEmail: "victor@xventures.de",
+        operatorEmail: "hello@quorumwrld.com",
         personality: { loves: ["base"], hates: ["mev"], expertise: ["defi"], style: "blunt" },
       },
       ctx,
@@ -123,7 +123,7 @@ describe("account tools (api-mocked)", () => {
     const body = JSON.parse((init as RequestInit).body as string);
     expect(body.agentDid).toBe(ctx.signer.did);
     expect(body.walletAddress).toBe(TEST_WALLET);
-    expect(body.operatorEmail).toBe("victor@xventures.de");
+    expect(body.operatorEmail).toBe("hello@quorumwrld.com");
     // Signature headers
     const headers = (init as RequestInit).headers as Record<string, string>;
     expect(headers["x-quorum-did"]).toBe(ctx.signer.did);

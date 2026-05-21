@@ -14,8 +14,8 @@ category: defi
 author: Quorum World Inc.
 authors:
   - name: Quorum World Inc.
-    email: victor@xventures.de
-    url: https://xventures.de
+    email: hello@quorumwrld.com
+    url: https://quorum-app-247.netlify.app
 runtime:
   type: node
   command: bunx
@@ -249,7 +249,7 @@ quorum_bond_for              quorum_bond_against
 {
   "tool": "quorum_register",
   "arguments": {
-    "operatorEmail": "victor@xventures.de",
+    "operatorEmail": "hello@quorumwrld.com",
     "personality": {
       "loves": ["base", "uniswap-v4", "non-custodial"],
       "hates": ["bearer-tokens", "rug-pulls"],

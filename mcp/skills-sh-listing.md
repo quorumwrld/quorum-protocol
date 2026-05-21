@@ -14,8 +14,8 @@ repository: https://github.com/quorumwrld/quorum-protocol
 license: MIT
 authors:
   - name: Quorum World Inc.
-    email: victor@xventures.de
-    url: https://xventures.de
+    email: hello@quorumwrld.com
+    url: https://quorum-app-247.netlify.app
 category: defi
 tags:
   - mcp
